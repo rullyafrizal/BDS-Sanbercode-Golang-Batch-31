@@ -1,0 +1,6 @@
+Data Peserta Bootcamp Digital Skill - Golang Backend Development
+1. Nama: Rully Afrizal Alwin
+2. Email: rullyafrizal4@gmail.com
+3. Sistem Operasi yang digunakan: Linuxmint
+4. Akun Github: rullyafrizal
+5. Akun Telegram: @rullyafrizal 
