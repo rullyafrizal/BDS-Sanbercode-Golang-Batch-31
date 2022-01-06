@@ -35,11 +35,10 @@ func main() {
 
 	// soal 3
 	var kalimat = [...]string{"aku", "dan", "saya", "sangat", "senang", "belajar", "golang"}
+	var kalimatSlice = kalimat[2:]
 
-	for i, item := range kalimat {
-		if i > 1 {
-			fmt.Printf("%s ", item)
-		}
+	for _, item := range kalimatSlice {
+		fmt.Printf("%s ", item)
 	}
 
 	fmt.Println("")
