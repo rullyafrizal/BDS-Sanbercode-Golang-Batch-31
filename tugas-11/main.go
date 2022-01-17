@@ -5,12 +5,14 @@ import (
 	"math"
 	"sort"
 	"strconv"
+	"strings"
 	"sync"
 	"time"
 )
 
 func main() {
 	// soal 1
+	fmt.Printf("%s\n", strings.Repeat("=", 30))
 	var phones []string = []string{"Xiaomi", "Asus", "Iphone", "Samsung", "Oppo", "Realme", "Vivo"}
 	sort.Strings(phones)
 	var wg sync.WaitGroup
@@ -28,6 +30,7 @@ func main() {
 	wg.Wait()
 
 	// soal 2
+	fmt.Printf("%s\n", strings.Repeat("=", 30))
 	var movies = []string{"Harry Potter", "LOTR", "SpiderMan", "Logan", "Avengers", "Insidious", "Toy Story"}
 
 	moviesChannel := make(chan string)
@@ -39,6 +42,7 @@ func main() {
 	}
 
 	// soal 3
+	fmt.Printf("%s\n", strings.Repeat("=", 30))
 	kelilingLing := make(chan float64)
 	luasLing := make(chan float64)
 	volumeTab := make(chan float64)
@@ -50,22 +54,22 @@ func main() {
 
 	go luasLingkaran(&luasLing, r1, r2, r3)
 	go kelilingLingkaran(&kelilingLing, r1, r2, r3)
-
 	go volumeTabung(&volumeTab, t, r1, r2, r3)
 
 	for val := range kelilingLing {
-		fmt.Printf("%.2f\n", val)
+		fmt.Printf("keliling lingkaran : %.2f\n", val)
 	}
 
 	for val := range luasLing {
-		fmt.Printf("%.2f\n", val)
+		fmt.Printf("luas lingkaran : %.2f\n", val)
 	}
 
 	for val := range volumeTab {
-		fmt.Printf("%.2f\n", val)
+		fmt.Printf("volume tabung : %.2f\n", val)
 	}
 
 	// soal 4
+	fmt.Printf("%s\n", strings.Repeat("=", 30))
 	var p int = 15
 	var l int = 12
 	var tinggi int = 8
