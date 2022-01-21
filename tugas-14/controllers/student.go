@@ -6,6 +6,7 @@ import (
 	"errors"
 	"log"
 	"net/http"
+	"time"
 
 	"tugas-14/config"
 	"tugas-14/models"
@@ -57,6 +58,8 @@ func StoreStudent(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		Name:    request.Name,
 		Grade:   request.Grade,
 		Subject: request.Subject,
+		CreatedAt: time.Now(),
+		UpdatedAt: time.Now(),
 	}
 
 	determineIndex(&student)

@@ -28,6 +28,8 @@ CREATE TABLE `students` (
   `subject` varchar(255) NOT NULL,
   `grade` int unsigned DEFAULT NULL,
   `index` char(1) DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +40,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'Rully','Pemrograman Web',85,'A'),(2,'Rully','Pemrograman Web',99,'A'),(3,'Zidan','Pemrograman Web',75,'B');
+INSERT INTO `students` VALUES (1,'Rully','Pemrograman Web',85,'A','2022-01-21 01:52:01','2022-01-21 01:52:20'),(2,'Rully','Pemrograman Web',99,'A','2022-01-21 01:52:01','2022-01-21 01:52:20'),(3,'Zidan','Pemrograman Web',75,'B','2022-01-21 01:52:01','2022-01-21 01:52:20');
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-20  9:01:29
+-- Dump completed on 2022-01-21  1:54:03

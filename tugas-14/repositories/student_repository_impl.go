@@ -15,14 +15,14 @@ func NewStudentRepository(db *sql.DB) *StudentRepositoryImpl {
 }
 
 func (repository *StudentRepositoryImpl) Insert(ctx context.Context, student Models.Student) (Models.Student, error) {
-	script := "INSERT INTO students (name, subject, grade, `index`) VALUES (?, ?, ?, ?)"
+	script := "INSERT INTO students (name, subject, grade, `index`, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)"
 	stmt, err := repository.DB.PrepareContext(ctx, script)
 
 	if err != nil {
 		return student, err
 	}
 
-	result, err := stmt.ExecContext(ctx, student.Name, student.Subject, student.Grade, student.Index)
+	result, err := stmt.ExecContext(ctx, student.Name, student.Subject, student.Grade, student.Index, student.CreatedAt, student.UpdatedAt)
 
 	if err != nil {
 		return student, err
@@ -54,7 +54,7 @@ func (repository *StudentRepositoryImpl) GetAll(ctx context.Context) ([]Models.S
 	for rows.Next() {
 		var student Models.Student
 
-		err = rows.Scan(&student.ID, &student.Name, &student.Subject, &student.Grade, &student.Index)
+		err = rows.Scan(&student.ID, &student.Name, &student.Subject, &student.Grade, &student.Index, &student.CreatedAt, &student.UpdatedAt)
 
 		if err != nil {
 			panic(err)

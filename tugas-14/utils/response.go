@@ -13,7 +13,6 @@ func ResponseJSON(w http.ResponseWriter, p interface{}, status int) {
 	  http.Error(w, "Error : ", http.StatusBadRequest)
 	}
 	
-	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
 	w.Write([]byte(byted))
   }
